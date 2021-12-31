@@ -30,6 +30,6 @@ export class EventThumbnailComponent {
 
   handleClickMe() {
     console.log('Button clicked!');
-    this.eventClick.emit('foo');
+    this.eventClick.emit(this.event.name);
   }
 }
