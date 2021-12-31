@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
     <div>
     <h1>Upcoming Angular Events</h1>
     <hr/>
-    <!-- eventClick must match the name of the output event in the child component EventThumbnailComponent -->
-    <event-thumbnail (eventClick)="handleEventClicked($event)" [event]="event1"></event-thumbnail>
+    <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
+    <h3>{{thumbnail.someProperty}}</h3>
+    <button class="btn btn-primary" (click)="thumbnail.logFoo()">Click Me!</button>
   </div>
   `
 })
@@ -26,8 +27,4 @@ export class EventsListComponent {
       country: 'England'
     }
   };
-
-  handleEventClicked(data) {
-    console.log('received :', data);
-  }
 }

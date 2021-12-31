@@ -15,9 +15,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         <span>&nbsp;</span>
         <span>{{event.location.city}}, {{event.location.country}}</span>
       </div>
-
-      <button class="btn btn-primary" (click)="handleClickMe()">Click Me</button>
-
     </div>
   `
 })
@@ -25,11 +22,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class EventThumbnailComponent {
   @Input() event: any;
-  // We need to tell parent component that something is happening on button click
-  @Output() eventClick = new EventEmitter();
-
-  handleClickMe() {
-    console.log('Button clicked!');
-    this.eventClick.emit(this.event.name);
+  someProperty:any = 'some value';
+  logFoo() {
+    console.log('foo');
   }
 }
